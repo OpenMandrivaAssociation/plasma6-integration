@@ -40,7 +40,7 @@ BuildRequires: pkgconfig(wayland-client)
 BuildRequires: cmake(PlasmaWaylandProtocols)
 BuildRequires: noto-sans-fonts
 Requires: noto-sans-fonts
-Requires: breeze
+Requires: plasma6-breeze
 
 %description
 Framework Integration is a set of plugins responsible
