@@ -1,0 +1,22 @@
+diff -up plasma-integration-5.17.5/src/platformtheme/khintssettings.cpp.omv~ plasma-integration-5.17.5/src/platformtheme/khintssettings.cpp
+--- plasma-integration-5.17.5/src/platformtheme/khintssettings.cpp.omv~	2020-01-15 16:01:52.023096542 +0100
++++ plasma-integration-5.17.5/src/platformtheme/khintssettings.cpp	2020-01-15 16:08:02.151112863 +0100
+@@ -139,7 +139,17 @@ KHintsSettings::KHintsSettings(KSharedCo
+     }
+     m_hints[QPlatformTheme::StyleNames] = styleNames;
+ 
+-    m_hints[QPlatformTheme::DialogButtonBoxLayout] = QDialogButtonBox::KdeLayout;
++    const QString buttonOrder = readConfigValue(cg, QStringLiteral("buttonOrder"), QStringLiteral("kde")).toString().toLower();
++    if(buttonOrder == QStringLiteral("windows"))
++        m_hints[QPlatformTheme::DialogButtonBoxLayout] = QDialogButtonBox::WinLayout;
++    else if(buttonOrder == QStringLiteral("mac"))
++        m_hints[QPlatformTheme::DialogButtonBoxLayout] = QDialogButtonBox::MacLayout;
++    else if(buttonOrder == QStringLiteral("gnome"))
++        m_hints[QPlatformTheme::DialogButtonBoxLayout] = QDialogButtonBox::GnomeLayout;
++    else if(buttonOrder == QStringLiteral("android"))
++        m_hints[QPlatformTheme::DialogButtonBoxLayout] = QDialogButtonBox::AndroidLayout;
++    else /* Let's default to KDE for any invalid value */
++        m_hints[QPlatformTheme::DialogButtonBoxLayout] = QDialogButtonBox::KdeLayout;
+     m_hints[QPlatformTheme::DialogButtonBoxButtonsHaveIcons] = readConfigValue(cg, QStringLiteral("ShowIconsOnPushButtons"), true);
+     m_hints[QPlatformTheme::UseFullScreenForPopupMenu] = true;
+     m_hints[QPlatformTheme::KeyboardScheme] = QPlatformTheme::KdeKeyboardScheme;
