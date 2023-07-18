@@ -39,6 +39,7 @@ BuildRequires: pkgconfig(xcursor)
 BuildRequires: pkgconfig(wayland-client)
 BuildRequires: cmake(PlasmaWaylandProtocols)
 BuildRequires: noto-sans-fonts
+BuildRequires: plasma6-xdg-desktop-portal-kde
 Requires: noto-sans-fonts
 Requires: plasma6-breeze
 
