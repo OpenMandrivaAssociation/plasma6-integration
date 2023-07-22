@@ -1,6 +1,6 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-%define git 20230715
+%define git 20230722
 
 Summary: Qt integration framework with Plasma
 Name: plasma6-integration
@@ -60,7 +60,8 @@ Development files for plasma-key-data.
 %autosetup -p1 -n plasma-integration-%{?git:master}%{!?git:%{version}}
 %cmake \
 	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
+	-DBUILD_QT5:BOOL=OFF \
+	-DBUILD_QT6:BOOL=ON \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
 	-G Ninja
 
@@ -74,7 +75,7 @@ Development files for plasma-key-data.
 
 %files -f plasmaintegration5.lang
 %doc README.md
-%{_qtdir}/plugins/platformthemes/KDEPlasmaPlatformTheme.so
+%{_qtdir}/plugins/platformthemes/KDEPlasmaPlatformTheme6.so
 %{_datadir}/kconf_update/*.upd
 %{_datadir}/kconf_update/*.pl
 
