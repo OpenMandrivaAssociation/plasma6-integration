@@ -4,8 +4,8 @@
 
 Summary: Qt integration framework with Plasma
 Name: plasma6-integration
-Version: 5.27.80
-Release: %{?git:0.%{git}.}2
+Version: 5.90.0
+Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/plasma-integration/-/archive/master/plasma-integration-master.tar.bz2#/plasma-integration-%{git}.tar.bz2
 %else
@@ -18,7 +18,7 @@ Group: System/Libraries
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(Breeze)
 BuildRequires: cmake(KF6WidgetsAddons)
-BuildRequires: cmake(KF6Wayland)
+BuildRequires: cmake(Wayland) >= 5.90.0
 BuildRequires: cmake(KF6Notifications)
 BuildRequires: cmake(KF6KIO)
 BuildRequires: cmake(KF6IconThemes)
