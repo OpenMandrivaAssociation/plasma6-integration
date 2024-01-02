@@ -4,7 +4,7 @@
 
 Summary: Qt integration framework with Plasma
 Name: plasma6-integration
-Version: 5.90.0
+Version: 5.91.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/plasma-integration/-/archive/master/plasma-integration-master.tar.bz2#/plasma-integration-%{git}.tar.bz2
@@ -12,6 +12,7 @@ Source0:	https://invent.kde.org/plasma/plasma-integration/-/archive/master/plasm
 Source0: http://download.kde.org//%{stable}/plasma/%{plasmaver}/plasma-integration-%{version}.tar.xz
 %endif
 Patch0: plasma-integration-5.17.5-allow-configuring-button-order.patch
+Patch1: https://invent.kde.org/plasma/plasma-integration/-/commit/4a7354ed576b1b51ccca6e4f0674df198454fdea.patch
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
@@ -76,7 +77,5 @@ Development files for plasma-key-data.
 %files -f plasmaintegration5.lang
 %doc README.md
 %{_qtdir}/plugins/platformthemes/KDEPlasmaPlatformTheme6.so
-%{_datadir}/kconf_update/*.upd
-%{_datadir}/kconf_update/*.pl
 
 %files devel
