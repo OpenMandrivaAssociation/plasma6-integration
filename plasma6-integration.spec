@@ -14,7 +14,7 @@ Source0:	https://invent.kde.org/plasma/plasma-integration/-/archive/%{gitbranch}
 Source0: http://download.kde.org//%{stable}/plasma/%{plasmaver}/plasma-integration-%{version}.tar.xz
 %endif
 Patch0: plasma-integration-5.17.5-allow-configuring-button-order.patch
-URL: http://kde.org/
+URL: https://kde.org/
 License: GPL
 Group: System/Libraries
 BuildRequires: cmake(ECM)
