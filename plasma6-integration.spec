@@ -40,6 +40,7 @@ BuildRequires: cmake(Qt6Quick)
 BuildRequires: cmake(Qt6QuickControls2)
 BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(xcursor)
+BuildRequires: pkgconfig(xkbcommon)
 BuildRequires: pkgconfig(wayland-client)
 BuildRequires: cmake(PlasmaWaylandProtocols)
 BuildRequires: noto-sans-fonts
