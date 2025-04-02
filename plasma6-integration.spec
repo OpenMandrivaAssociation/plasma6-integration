@@ -6,8 +6,8 @@
 
 Summary: Qt integration framework with Plasma
 Name: plasma6-integration
-Version: 6.3.3
-Release: %{?git:0.%{git}.}2
+Version: 6.3.4
+Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/plasma-integration/-/archive/%{gitbranch}/plasma-integration-%{gitbranchd}.tar.bz2#/plasma-integration-%{git}.tar.bz2
 %else
